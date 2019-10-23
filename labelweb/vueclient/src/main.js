@@ -3,9 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import 'vueui-widgets/dist/index.css'
+import VueUI from 'vueui-widgets'
 
 Vue.config.productionTip = false
 
+//配置ElementUI
+Vue.use(ElementUI);
+//配置vueui-widgets
+Vue.use(VueUI);
 //配置跨域
 import axios from 'axios';//引入axios组件
 axios.defaults.withCredentials=true;  //跨域保存session有用；由于是跨域请求，我们需要配置withCredentials为true，这样避免每次都被识别为新的请求。
