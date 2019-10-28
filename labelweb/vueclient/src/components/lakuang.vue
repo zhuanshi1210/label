@@ -77,23 +77,23 @@
         value: [],
         options: [{
           value: 'human',
-          label: '人类',
+          label: 'human',
           children: [{
-            value: 'old',
-            label: '老人',
+            value: 'woman',
+            label: 'woman',
           },{
-            value: 'children',
-            label: '小孩',
+            value: 'man',
+            label: 'man',
           }]
         },{
           value: 'animal',
-          label: '动物',
+          label: 'animal',
           children: [{
             value: 'dog',
-            label: '狗',
+            label: 'dog',
           },{
             value: 'cat',
-            label: '猫',
+            label: 'cat',
           }]
         }]
       };
@@ -115,8 +115,8 @@
       // input组件上传图片
       onChange(e) {
         this.mysrc = window.URL.createObjectURL(e.target.files[0]);
-        console.log(this.mysrc);
-        e.target.value = ''
+        e.target.value = '';
+        this.mydata=[];
       },
       // 将上传事件传入input组件中,
       selectFile() {
@@ -167,10 +167,11 @@
         };
       },
       handleChange(value) {
-        this.currentItem.label=value.toString();
-        this.labelContent=this.currentItem.label;
+        //this.currentItem.label=value.toString();
+        this.labelContent=value.toString();
       },
       addLabel() {
+        this.currentItem.label=this.labelContent;
         this.mydata.splice(this.mydata.indexOf(this.originItem), 1,this.currentItem);
         this.currentItem=this.originItem=null;
         console.log("changeLabel");
@@ -234,8 +235,8 @@
         position: relative;
         .myedit-span {
           position: absolute;
-          border: 1px dashed #fff;
-          //background: url("../assets/jia.jpg") no-repeat center center;
+          border: 3px dashed #fff;
+          //background: url("../assets/jia.png") no-repeat center center;
           background-size: contain;
         }
         img {
